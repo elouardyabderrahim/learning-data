@@ -107,6 +107,111 @@ Unlike supervised learning, the model doesn't explain why it clusters data or ch
        - This can help design better marketing strategies or product recommendations.
 ---
 
+  ![alt text](image.png)
+
+Here's a corrected and improved version of your text with additional suggestions for clarity and detail:
+
+---
+
+## Evaluating Performance
+
+### Classification
+
+#### Overfitting
+Overfitting occurs when a model performs very well on the training data but poorly on the testing data. This is problematic because it indicates that the model has memorized the training set rather than learning patterns that generalize to new data.
+
+**How to measure a model's performance:**
+
+1. **Accuracy**  
+   Accuracy is the proportion of correctly predicted observations out of the total observations.  
+   \[
+   \text{Accuracy} = \frac{\text{Number of Correct Predictions}}{\text{Total Number of Predictions}}
+   \]  
+
+   **Limitations of Accuracy**  
+   Consider a fraud detection example where only 7 out of 100 transactions are fraudulent. A model that classifies all transactions as legitimate would achieve 93.33% accuracy but would fail to identify any fraudulent transactions. This highlights the importance of using additional metrics.
+
+      ![alt text](image-1.png)
+
+2. **Confusion Matrix**  
+   A confusion matrix provides detailed insights into the classification performance by showing the counts of:  
+   - **True Positives (TP):** Fraudulent transactions correctly classified as fraudulent. (Like a working smoke alarm when there is smoke.)  
+   - **False Negatives (FN):** Fraudulent transactions incorrectly classified as legitimate. (Like a smoke alarm failing to detect smoke.)  
+   - **True Negatives (TN):** Legitimate transactions correctly classified as legitimate.  
+   - **False Positives (FP):** Legitimate transactions incorrectly classified as fraudulent.
+
+        ![alt text](image-2.png)
+
+3. **Sensitivity (Recall)**  
+   Sensitivity measures the proportion of actual positives that are correctly identified.  
+   
+   \[
+   \text{Sensitivity (Recall)} = \frac{\text{True Positives (TP)}}{\text{True Positives (TP)} + \text{False Negatives (FN)}}
+   \]
+
+    ![alt text](image-3.png)
+
+4. **Specificity**
+
+   Specificity measures the proportion of actual negatives that are correctly identified.
+
+    \[
+   \text{Specificity} = \frac{\text{True Negatives (TN)}}{\text{True Negatives (TN)} + \text{False Positives (FP)}}
+   \]
+
+   These metrics are particularly useful in imbalanced datasets where the minority class (e.g., fraudulent transactions) is of primary interest.
+
+   ![alt text](image-4.png)
 
 
-![alt text](image.png)
+---
+
+### Evaluating Regression
+
+In regression problems, performance is evaluated by measuring the error between the predicted values and the actual values. Several common error metrics include:  
+
+1. **Mean Absolute Error (MAE):**
+   The average of absolute differences between predicted and actual values. 
+
+   \[
+   \text{MAE} = \frac{1}{n} \sum_{i=1}^n |\hat{y}_i - y_i|
+   \]
+
+2. **Mean Squared Error (MSE):**  
+   The average of the squared differences between predicted and actual values.  
+
+   \[
+   \text{MSE} = \frac{1}{n} \sum_{i=1}^n (\hat{y}_i - y_i)^2
+   \]
+
+3. **Root Mean Squared Error (RMSE):**  
+   The square root of MSE, providing error in the same units as the output variable. 
+
+   \[
+   \text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^n (\hat{y}_i - y_i)^2}
+   \]
+
+4. **R² Score (Coefficient of Determination):**  
+
+   Indicates the proportion of variance in the dependent variable that is predictable from the independent variable(s).
+
+   \[
+   R^2 = 1 - \frac{\text{Sum of Squared Residuals (SSR)}}{\text{Total Sum of Squares (SST)}}
+   \]
+
+### Evaluating Unsupervised Learning
+
+Unsupervised learning lacks predefined target variables, making evaluation more subjective and dependent on the task. Common evaluation methods include:
+
+1. **Clustering Metrics:**
+   - **Silhouette Score:** Measures how similar an object is to its cluster compared to other clusters.  
+   - **Davies-Bouldin Index:** Evaluates the compactness and separation of clusters.  
+
+2. **Dimensionality Reduction:**  
+   - Visual inspection of reduced dimensions (e.g.,PCA or t-SNE) to assess meaningful patterns.
+
+3. **Reconstruction Error:**  
+   In methods like autoencoders, the difference between input and reconstructed data can indicate performance.
+
+4. **Domain-Specific Evaluation:**  
+   Metrics tailored to specific tasks, such as anomaly detection precision in fraud detection or clustering validity in image segmentation.
