@@ -173,4 +173,8 @@ To select the most appropriate visualization:
 
 ---
 ![image](https://github.com/user-attachments/assets/490329ee-7d3a-4526-bf5f-83b202cfd8f0)
+---
+- Matrix is composed of row and columns . 
+![image](https://github.com/user-attachments/assets/62c4111f-c11e-43ad-85e1-979da68adc9e)
+
 
