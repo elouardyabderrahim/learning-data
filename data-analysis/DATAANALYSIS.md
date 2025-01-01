@@ -172,4 +172,5 @@ To select the most appropriate visualization:
 - **Audience**: Is your audience familiar with complex plots, or do you need something simple?
 
 ---
+![image](https://github.com/user-attachments/assets/490329ee-7d3a-4526-bf5f-83b202cfd8f0)
 
